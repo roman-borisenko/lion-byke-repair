@@ -1,0 +1,163 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(#fc5e55, #fa4083);
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 1.125rem;
+}
+
+.logo {
+  /* ПОЛОЖЕННЯ */
+  float: right;
+  /* ПУЛЬСАЦІЯ >>>*/
+
+  /* animation-name: blink;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-iteration-count: infinite; */
+
+  /* СКОРОЧЕНИЙ ЗАПИС */
+  animation: blink linear 3s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.mybutton {
+  background-color: rgb(76, 110, 202);
+  padding: 11px 25px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  margin: 1px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* This turn dropdown off when not used */
+.dropdown-box {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  padding-top: 20px;
+  margin-left: -30px;
+}
+/* This turn dropdown menu  on during hover */
+.mybutton:hover .dropdown-box {
+  display: block;
+}
+
+.dropdown-box .mybutton {
+  background-color: rgb(192, 192, 5);
+  border-radius: 0px 0px 1000px;
+}
+
+.dropdown-box .mybutton:hover {
+  background-color: rgb(75, 107, 177);
+  transition-duration: 1s;
+}
+
+/* ВИЛІТ ПОПУНКТНО ЗЛІВА>>> */
+
+.dropdown-box > div {
+  transform: translateX(-250%);
+}
+.dropdown-box > div:nth-child(1) {
+  animation: ani 0.4s ease-in-out forwards;
+}
+.dropdown-box > div:nth-child(2) {
+  animation: ani 0.4s forwards 0.4s;
+}
+.dropdown-box > div:nth-child(3) {
+  animation: ani 0.4s forwards 0.8s;
+}
+/* .dropdown-box>div:nth-child(4) {animation: ani 0.5s forwards 1.5s;}
+.dropdown-box>div:nth-child(5) {animation: ani 0.5s forwards 2s;} */
+
+@keyframes ani {
+  0% {
+    transform: translateX(-250%);
+  }
+  15% {
+    transform: translateX(5%);
+  }
+  30% {
+    transform: translateX(-5%);
+  }
+  45% {
+    transform: translateX(3%);
+  }
+  60% {
+    transform: translateX(-3%);
+  }
+  75% {
+    transform: translateX(1%);
+  }
+  85% {
+    transform: translateX(-1%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.mess {
+  /* display: flex; */
+  margin-top: 150px;
+}
+
+.mess1 {
+  cursor: pointer;
+}
+
+.mess2 {
+  display: none;
+  padding-left: 10px;
+}
+
+/* ПЛАВНЕ ВИПАДІННЯ ВНИЗ>>> */
+
+/* .mess2 {
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+}
+
+@keyframes ani {
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+/* ПОСТУПОВЕ З'ЯВЛЕННЯ >>>*/
+
+.mess2 {
+  opacity: 0;
+  animation: an 1.5s forwards;
+}
+
+@keyframes an {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ДО "ФУНКЦІЇ поступового з'явлення" В toggle.css */
+/* .mess2 {
+  opacity: 0;
+} */
